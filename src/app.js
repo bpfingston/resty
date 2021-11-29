@@ -19,11 +19,9 @@ class App extends React.Component {
   callApi = (requestParams) => {
     // mock output
     const data = {
-      count: 2,
-      results: [
-        { name: 'fake thing 1', url: 'http://fakethings.com/1' },
-        { name: 'fake thing 2', url: 'http://fakethings.com/2' },
-      ],
+      Header: response.header,
+      count: response.data.count,
+      Response: response.data.results,
     };
     this.setState({ data, requestParams });
   };
