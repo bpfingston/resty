@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './form.scss';
 
 function Form(props) {
 
-  const [urlValue, setUrlValue] = useState('');
-  const [methodValue, setMethodValue] = useState('');
+  const [urlValue, setUrlValue] = useState('')
+  const [methodValue, setMethodValue] = useState('')
   // const [] = useState('');
 
   const handleURL = (e) => {
     let { value } = e.target;
-    setMethodValue(value);
+    setUrlValue(value);
   }
 
   const handleMethod = (e) => {
@@ -17,15 +17,13 @@ function Form(props) {
     setMethodValue(method);
   }
 
-
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       method: methodValue,
       url: urlValue,
     };
-    props.handleApiCall(formData);
+    await props.handleApiCall(formData);
   };
   return (
     <>

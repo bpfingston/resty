@@ -17,13 +17,18 @@ class App extends React.Component {
   }
 
   callApi = (requestParams) => {
-    // mock output
+   try{
+      // mock output
     const data = {
-      Header: response.header,
-      count: response.data.count,
-      Response: response.data.results,
+      Header: Response.header,
+      // count: Response.data.count,
+      Response: Response.data,
+      
     };
     this.setState({ data, requestParams });
+   }catch(e) {
+    console.log(e)
+   }
   };
 
   render() {
