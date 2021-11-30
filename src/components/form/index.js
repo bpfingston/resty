@@ -1,60 +1,55 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './form.scss';
 
 function Form(props) {
-
-  const [urlValue, setUrlValue] = useState('')
-  const [methodValue, setMethodValue] = useState('')
-  // const [] = useState('');
-
-  const handleURL = (e) => {
-    let { value } = e.target;
-    setUrlValue(value);
-  }
-
-  const handleMethod = (e) => {
-    let method = e.target.id.toLowerCase();
-    setMethodValue(method);
-  }
-
-  const handleSubmit = async (e) => {
+  const [requestUrl, setRequestUrl] = useState('');
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      method: methodValue,
-      url: urlValue,
+      url: requestUrl,
     };
-    await props.handleApiCall(formData);
+    props.handleApiCall(formData);
   };
+
+  const handleClick = (e) => {
+    props.setMethodRequest(e.target.id);
+  };
+
+  const handleUserData = (e) => {
+    e.preventDefault();
+    props.setUserData(e.target.value);
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label>
           <span>URL: </span>
-          <input onChange={handleURL} name="url" type="text" />
+          <input
+            onChange={(e) => setRequestUrl(e.target.value)}
+            name="url"
+            type="text"
+          />
           <button type="submit">GO!</button>
         </label>
         <label className="methods">
-          <span 
-            onClick={handleMethod}
-            id="get"
-            className="CRUDbutton"
-          >GET</span>
-          <span 
-            onClick={handleMethod}
-            id="post"
-            className="CRUDbutton"
-          >POST</span>
-          <span 
-            onClick={handleMethod}
-            id="put"
-            className="CRUDbutton"
-          >PUT</span>
-          <span 
-            onClick={handleMethod}
-            id="delete"
-            className="CRUDbutton"
-          >DELETE</span>
+          <button type="button" onClick={handleClick} id="GET" value="GET">
+            GET
+          </button>
+          <button type="button" onClick={handleClick} id="POST" value="POST">
+            POST
+          </button>
+          <button type="button" onClick={handleClick} id="PUT" value="PUT">
+            PUT
+          </button>
+          <button
+            type="button" onClick={handleClick} id="DELETE" value="DELETE"
+          >
+            DELETE
+          </button>
         </label>
+        <textarea onChange={handleUserData} name="json" />
       </form>
     </>
   );
