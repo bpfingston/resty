@@ -23,7 +23,7 @@ Phase 3: Component Lifecycle / useEffect() Hook
   - As a user, I want to enter the URL to an API and issue a GET request so that I can retrieve it’s data  
   - As a user, I want to see the results returned from an API request in my browser in a readable format  
 
-CodeSandbox URL: [Click Me](https://enus1.csb.app/)
+CodeSandbox URL: [Click Me](https://codesandbox.io/s/vibrant-shamir-hht55)
 
 UML Phase 1:
 
