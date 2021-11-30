@@ -3,6 +3,7 @@
 4 phase React application.  
 phase 1: Basic Scaffolding
 phase 2: Adding State
+phase 3: Component Lifecycle
 
 ## Lab Requirements
 
@@ -16,6 +17,12 @@ Phase 2: useState() Hook
   - As a user, I want to enter the REST Method and URL to an API
   - As a user, I want to see a summary of my request as well as results returned from an API request in my browser in a readable format
 
+Phase 3: Component Lifecycle / useEffect() Hook  
+
+- In phase 3, we will be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service GET requests.The following user stories detail the major functionality for this phase of the project.  
+  - As a user, I want to enter the URL to an API and issue a GET request so that I can retrieve it’s data  
+  - As a user, I want to see the results returned from an API request in my browser in a readable format  
+
 CodeSandbox URL: [Click Me](https://enus1.csb.app/)
 
 UML Phase 1:
@@ -25,3 +32,7 @@ UML Phase 1:
 UML Phase 2:
 
 ![phase 2](../src/images/RESTy2.jpg)
+
+UML Phase 3:  
+
+![phase 3](../src/images/RESTy3.jpg)

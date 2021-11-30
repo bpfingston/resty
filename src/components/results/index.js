@@ -1,10 +1,13 @@
 import React from 'react';
-import './results.scss'
+import './results.scss';
+import ReactJson from 'react-json-view';
 
 function Results(props) {
   return (
     <section>
-      <pre class='results'>{props.data ? JSON.stringify(props.data, undefined, 2) : <p>loading</p> }</pre>
+      <pre class="results">
+        {props.data ? <ReactJson src={props.data} theme="summerfruit:inverted" />  : null}
+      </pre>
     </section>
   );
 }
